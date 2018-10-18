@@ -1,0 +1,30 @@
+--------------------------------------------------------
+--  File created - Thursday-October-18-2018   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table RECORDSHUBHAM
+--------------------------------------------------------
+
+  CREATE TABLE "TRAINING"."RECORDSHUBHAM" 
+   (	"REGNUMBER" NUMBER(10,0), 
+	"SERVICEID" NUMBER(10,0), 
+	"RECDATE" DATE
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "TRAINING" ;
+REM INSERTING into TRAINING.RECORDSHUBHAM
+SET DEFINE OFF;
+Insert into TRAINING.RECORDSHUBHAM (REGNUMBER,SERVICEID,RECDATE) values (64454,401,to_date('18-OCT-18','DD-MON-RR'));
+Insert into TRAINING.RECORDSHUBHAM (REGNUMBER,SERVICEID,RECDATE) values (12144,401,to_date('18-OCT-18','DD-MON-RR'));
+Insert into TRAINING.RECORDSHUBHAM (REGNUMBER,SERVICEID,RECDATE) values (12144,402,to_date('18-OCT-18','DD-MON-RR'));
+Insert into TRAINING.RECORDSHUBHAM (REGNUMBER,SERVICEID,RECDATE) values (64454,402,to_date('18-OCT-18','DD-MON-RR'));
+--------------------------------------------------------
+--  Ref Constraints for Table RECORDSHUBHAM
+--------------------------------------------------------
+
+  ALTER TABLE "TRAINING"."RECORDSHUBHAM" ADD FOREIGN KEY ("SERVICEID")
+	  REFERENCES "TRAINING"."SERVICESHUBHAM" ("SERVICEID") ENABLE;
+ 
+  ALTER TABLE "TRAINING"."RECORDSHUBHAM" ADD FOREIGN KEY ("REGNUMBER")
+	  REFERENCES "TRAINING"."CARSHUBHAM" ("REGNUMBER") ENABLE;
